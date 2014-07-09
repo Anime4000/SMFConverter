@@ -5,16 +5,6 @@ SMFConverter support converting from archive, simply set .smf file to smfc.exe a
 
 To download click [here!](https://drive.google.com/file/d/0B_nmcRzQ-bL9LTU5Mm5PTnVyMEk/edit?usp=sharing)
 
-## Requirement:
-In order to use, you need extract the .sga file first, this can be done by using [GCFScape](http://nemesis.thewavelength.net/index.php?p=26)
-
-A player that can play WAV (IMA ADPCM) or MP3, usually it installed by default, you may not to worries.
-
-## Compiling:
-To compile the source code, you need Microsoft VisualStudio 2013.
-
-This code was written in C#, thus you may need VisualStudio C#.
-
 ## Uses:
 ```
 Usage: smfc.exe [input|-h] [-c] [-p 0|1] [-o output]
@@ -29,3 +19,13 @@ Options:
 
 Example: smfc.exe "C:\coh_combat.smf" -c -p 0 -o "D:\My Stuff\music"
 ```
+
+## Requirement:
+In order to use, you need extract the .sga file first, this can be done by using [GCFScape](http://nemesis.thewavelength.net/index.php?p=26)
+
+A player that can play WAV (IMA ADPCM) or MP3, usually it installed by default, you may not to worries.
+
+## Compiling:
+To compile the source code, you need Microsoft VisualStudio 2013.
+
+This code was written in C#, thus you may need VisualStudio C#.
