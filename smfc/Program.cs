@@ -7,8 +7,11 @@ namespace smfc
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static int Main(string[] args)
 		{
+			int EXIT_SUCCESS = 0;
+			int EXIT_FAILURE = 1;
+
 			bool FClose = false;
 			bool FPlay = true;
 			string fileout = null;
@@ -21,7 +24,7 @@ namespace smfc
 			{
 				Print(3, "No file detected, please drag and drop the .smf file to smfc.exe\n");
 				System.Threading.Thread.Sleep(5000);
-				return;
+				return EXIT_FAILURE;
 			}
 
 			for (int i = 0; i < args.Length; i++)
@@ -41,7 +44,7 @@ namespace smfc
 					Console.WriteLine("Example: smfc.exe \"C:\\coh_combat.smf\" -c -p 0 -o \"D:\\My Stuff\\music\"");
 					Console.WriteLine();
 					Console.WriteLine("smfc will try detect the .smf file structure, either can be save in wav or mp3");
-					return;
+					return EXIT_SUCCESS;
 				}
 
 				if (!args[i].Contains("-"))
@@ -82,7 +85,7 @@ namespace smfc
 				{
 					Print(3, String.Format("File {0} is not valid! Exiting...\n", System.IO.Path.GetFileName(args[id])));
 					System.Threading.Thread.Sleep(3000);
-					return;
+					return EXIT_FAILURE;
 				}
 				else
 				{
@@ -121,16 +124,17 @@ namespace smfc
 				{
 					Print(1, "Done!\n");
 					System.Threading.Thread.Sleep(3000);
-					return;
+					return EXIT_SUCCESS;
 				}
 
-				Print(1, "Done! Press ANY key to exit\n");
-				Console.ReadKey();
+				Print(1, "Done! Press ANY key to exit\n"); Console.ReadKey();
+				return EXIT_SUCCESS;
 			}
 			catch (Exception ex)
 			{
 				Print(3, ex.Message);
 				Console.ReadKey();
+				return EXIT_FAILURE;
 			}
 		}
 
