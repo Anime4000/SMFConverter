@@ -12,11 +12,14 @@ A player that can play WAV (IMA ADPCM) or MP3, usually it installed by default, 
 
 
 ## Tweaking
-By default, smfc will stay on screen after you open .smf file, this require a little modification on Windows REG, simply open regedit and find:
+By default, smfc will stay on screen after you open .smf file, to make auto close after opening, follow this step.
+
+1. Open "regedit" at Run or Start Menu search
+2. Find this key
 ```
 HKEY_CURRENT_USER\Software\Classes\smf_auto_file\shell\open\command
 ```
-Double click (default) and add -c after "%1", for example:
+3. Double click (default) and add -c after "%1", for example:
 ```
 "C:\Users\Anime4000\Desktop\smfc.exe" "%1" -c
 ```
