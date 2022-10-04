@@ -31,7 +31,7 @@ namespace smfc
 			{
 				if (args[i].Contains("-h"))
 				{
-					Console.WriteLine("Usage: smfc.exe [input|-h] [-c] [-p 0|1] [-o output]");
+					Console.WriteLine("Usage: smfc.exe <input|-h> [-c] [-p 0|1] [-o output]");
 					Console.WriteLine();
 					Console.WriteLine("Options:");
 					Console.WriteLine("    input       Company of Heroes sound file (*.smf)");
@@ -66,7 +66,7 @@ namespace smfc
 				string ext = "";
 
 				if (fileout == null)
-					output = System.IO.Path.GetFileNameWithoutExtension(args[id]);
+					output = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(args[id]), System.IO.Path.GetFileNameWithoutExtension(args[id]));
 				else
 					if (fileout.Contains(":\\"))
 						output = fileout;
