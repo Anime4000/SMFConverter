@@ -6,7 +6,7 @@ SMFConverter support converting from archive, simply set .smf file to smfc.exe a
 To download click [here!](https://drive.google.com/file/d/0B_nmcRzQ-bL9bi1Ba0pQZDZwNDA/edit?usp=sharing)
 
 ## Info:
-In order to use, you need extract the .sga file first, this can be done by using [GCFScape](http://nemesis.thewavelength.net/index.php?p=26)
+In order to use, you need extract the .sga file first, this can be done by using [GCFScape](https://nemstools.github.io/pages/GCFScape-Download.html)
 
 A player that can play WAV (IMA ADPCM) or MP3, usually it installed by default, you may not to worries.
 
