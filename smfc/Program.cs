@@ -16,6 +16,7 @@ namespace smfc
 			bool FPlay = true;
 			string fileout = null;
 			int id = 0;
+			int ExitDelay = 1;
 
 			Console.Write("Company of Heroes Sound Converter - Compiled on {0}\n", Globals.BuildDate);
 			Console.Write("Version: {0} ({1} build) by Anime4000\n\n", Globals.Version, Globals.CPUArch);
@@ -36,7 +37,7 @@ namespace smfc
 					Console.WriteLine("Options:");
 					Console.WriteLine("    input       Company of Heroes sound file (*.smf)");
 					Console.WriteLine("    -h          Display this help screen.");
-					Console.WriteLine("    -c          Exit after converting.");
+					Console.WriteLine("    -c int      Wait and exit after converting, 0 second cause instant exit. (default 1 second)");
 					Console.WriteLine("    -p bool     Play converted audio. (default 1)");
 					Console.WriteLine("    -o name     Save converted file to specific path instead of save ");
 					Console.WriteLine("                in working folder. It will ignore file extension.");
@@ -51,10 +52,17 @@ namespace smfc
 					id = i;
 
 				if (args[i].Contains("-c"))
+                {
 					FClose = true;
 
-				if (args[i].Contains("-p") && args[++i].Contains("0"))
-					FPlay = false;
+					if (i + 1 < args.Length)
+						int.TryParse(args[++i], out ExitDelay);
+				}
+
+				if (args[i].Contains("-p"))
+					if (i + 1 < args.Length)
+						if (args[++i].Contains("0"))
+							FPlay = false;
 
 				if (args[i].Contains("-o"))
 					fileout = args[++i];
@@ -123,7 +131,7 @@ namespace smfc
 				if (FClose)
 				{
 					Print(1, "Done!\n");
-					System.Threading.Thread.Sleep(1500);
+					System.Threading.Thread.Sleep(ExitDelay * 1000);
 					return EXIT_SUCCESS;
 				}
 
