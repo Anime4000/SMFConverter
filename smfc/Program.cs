@@ -123,11 +123,12 @@ namespace smfc
 				if (FClose)
 				{
 					Print(1, "Done!\n");
-					System.Threading.Thread.Sleep(3000);
+					System.Threading.Thread.Sleep(1500);
 					return EXIT_SUCCESS;
 				}
 
-				Print(1, "Done! Press ANY key to exit\n"); Console.ReadKey();
+				Print(1, "Done! Press ANY key to exit\n");
+				System.Threading.Thread.Sleep(3000);
 				return EXIT_SUCCESS;
 			}
 			catch (Exception ex)
